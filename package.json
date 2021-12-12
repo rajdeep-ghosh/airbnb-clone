@@ -1,5 +1,24 @@
 {
+  "name": "airbnb-clone",
+  "description": "Airbnb Clone built using Next.js & Tailwind CSS",
+  "version": "1.0.0",
   "private": true,
+  "author": {
+    "name": "Rajdeep Ghosh",
+    "email": "rajdeepghosh810@gmail.com",
+    "url": "https://linkedin.com/in/rajdeepghosh01"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rajdeep-ghosh/airbnb-clone"
+  },
+  "keywords": [
+    "next.js",
+    "reactjs",
+    "tailwind-css",
+    "mapbox"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
