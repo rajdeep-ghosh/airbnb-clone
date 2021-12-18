@@ -5,12 +5,6 @@ function custom404() {
     <>
       <Head>
         <title>404 - Page not found</title>
-        <meta name="description" content="Airbnb Clone 404 - Page not found" />
-        <meta name="author" content="Rajdeep Ghosh" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
       </Head>
 
       <div className="p-6 sm:p-12 lg:p-20 w-screen h-screen flex flex-col justify-between bg-[#f5f5f5]">
