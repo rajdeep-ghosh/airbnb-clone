@@ -12,14 +12,14 @@ function Header() {
           layout="fill"
           objectFit="contain"
           objectPosition="left"
-          className="[display:none_!important] md:[display:block_!important]"
+          className="!hidden md:!block"
         />
         <Image
           src={airbnbIcon}
           layout="fill"
           objectFit="contain"
           objectPosition="left"
-          className="md:[display:none_!important]"
+          className="md:!hidden"
         />
       </div>
 
