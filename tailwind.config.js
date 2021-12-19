@@ -4,7 +4,14 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        airbnb_red: "#e0565b",
+      },
+      fontFamily: {
+        "Nunito-Sans": ['"Nunito Sans", sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
