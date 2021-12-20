@@ -27,7 +27,7 @@ function Header() {
       {/* Middle */}
       <div className="flex justify-between items-center p-2 border-2 rounded-full">
         <input className="flex-grow" type="text" placeholder="Where are you going?" />
-        <button className="search__btn">
+        <button className="btn bg-airbnb_red text-white ring-airbnb_red">
           <SearchIcon className="h-6 inline" /> <span>Search</span>
         </button>
       </div>
