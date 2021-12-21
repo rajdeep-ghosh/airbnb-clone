@@ -32,7 +32,7 @@ function Header() {
           type="text"
           placeholder="Where are you going?"
         />
-        <button className="btn bg-airbnb_red text-white ring-airbnb_red">
+        <button className="btn rounded-full bg-airbnb_red text-white ring-airbnb_red">
           <SearchIcon className="h-6 inline" />{" "}
           <span className="hidden md:inline">Search</span>
         </button>
