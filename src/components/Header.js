@@ -1,7 +1,8 @@
 import Image from "next/image";
 import airbnbLogo from "../assets/img/airbnb-logo.svg";
 import airbnbIcon from "../assets/img/airbnb-icon.svg";
-import { SearchIcon } from "@heroicons/react/outline";
+import { SearchIcon, MenuIcon } from "@heroicons/react/outline";
+import { GlobeAltIcon, UserCircleIcon } from "@heroicons/react/solid";
 
 function Header() {
   return (
@@ -26,7 +27,7 @@ function Header() {
       </div>
 
       {/* Middle */}
-      <div className="flex justify-between items-center p-2 border-2 rounded-full sm:shadow-sm">
+      <div className="flex justify-between items-center p-2 w-[40vw] max-w-3xl border-2 rounded-full sm:shadow-sm">
         <input
           className="flex-1 px-5 text-lg bg-transparent outline-none"
           type="text"
@@ -39,6 +40,14 @@ function Header() {
       </div>
 
       {/* Right */}
+      <div className="flex space-x-3 items-center text-zinc-500">
+        <p className="hidden md:inline text-sm">Become a host</p>
+        <GlobeAltIcon className="h-5 cursor-pointer" />
+        <div className="flex items-center space-x-2 p-2 border-2 rounded-full">
+          <MenuIcon className="h-5" />
+          <UserCircleIcon className="h-5" />
+        </div>
+      </div>
     </header>
   );
 }
