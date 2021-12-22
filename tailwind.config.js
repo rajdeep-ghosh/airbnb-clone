@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        airbnb_red: "#e0565b",
+        airbnb_red: "#ff5a5f",
       },
       fontFamily: {
         "Nunito-Sans": ['"Nunito Sans", sans-serif'],
