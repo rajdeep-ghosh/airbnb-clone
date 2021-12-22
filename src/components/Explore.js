@@ -5,7 +5,7 @@ function Explore() {
   return (
     <section className="mx-6 sm:mx-14 xl:mx-40 mt-12 !font-Nunito-Sans">
       <h1 className="text-3xl font-extrabold">Explore nearby</h1>
-      <div className="my-7 grid grid-cols-[repeat(auto-fit,_minmax(241px,_1fr))] gap-6 overflow-scroll overflow-y-hidden">
+      <div className="my-7 grid grid-cols-[repeat(auto-fit,_minmax(241px,_1fr))] gap-6 hide__XScrollbar">
         {explore?.map((item, idx) => (
           <div
             key={idx}
