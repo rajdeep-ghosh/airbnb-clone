@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Header />
       
-      <main className="antialiased">
+      <main className="bg-gray-50 antialiased">
         <Hero />
         <Explore />
       </main>
