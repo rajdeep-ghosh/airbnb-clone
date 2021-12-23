@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Explore from "../components/Explore";
+import Banner from "../components/Banner";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <main className="bg-gray-50 antialiased">
         <Hero />
         <Explore />
+        <Banner />
       </main>
     </>
   );
