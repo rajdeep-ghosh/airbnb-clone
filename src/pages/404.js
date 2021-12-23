@@ -7,7 +7,7 @@ function custom404() {
         <title>404 - Page not found</title>
       </Head>
 
-      <div className="p-6 sm:p-12 lg:p-20 w-screen h-screen flex flex-col justify-between bg-[#f5f5f5]">
+      <div className="p-6 sm:p-12 lg:p-20 w-screen h-screen flex flex-col justify-between bg-[#f5f5f5] selection:bg-airbnb_red selection:text-white">
         <div className="font-mono text-lg tracking-wider">404</div>
         <div className="flex flex-col space-y-7">
           <h1 className=" text-3xl sm:text-5xl font-Rubik font-medium">
