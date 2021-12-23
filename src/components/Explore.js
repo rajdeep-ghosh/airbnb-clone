@@ -22,7 +22,7 @@ function Explore() {
             </div>
             <div className="transform group-hover:-translate-x-4 transition ease-linear duration-200">
               <h2 className="text-lg font-bold">{item.name}</h2>
-              <h3>{item.time}-hour drive</h3>
+              <h3 className="text-gray-500">{item.time}-hour drive</h3>
             </div>
           </div>
         ))}
