@@ -12,7 +12,7 @@ module.exports = {
         "Nunito-Sans": ['"Nunito Sans", sans-serif'],
       },
       screens: {
-        xs: "500px",
+        xs: "550px",
       },
     },
   },
