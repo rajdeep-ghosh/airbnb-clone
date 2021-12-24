@@ -15,6 +15,7 @@ export default function Home() {
         <Explore />
         <Banner />
         <Cards section="live" content={experience.live} />
+        <Cards section="discover" content={experience.discover} />
       </main>
     </>
   );

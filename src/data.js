@@ -20,4 +20,12 @@ export const experience = {
       { title: "Pets allowed", img: "live/4.jpg" },
     ],
   },
+  discover: {
+    heading: "Discover things to do",
+    items: [
+      { title: "Treking", img: "discover/1.jpg" },
+      { title: "Baking", img: "discover/2.jpg" },
+      { title: "Hot air balloon ride", img: "discover/3.jpg" },
+    ],
+  },
 };
