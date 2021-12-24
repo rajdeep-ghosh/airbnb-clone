@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Explore from "../components/Explore";
 import Banner from "../components/Banner";
 import Cards from "../components/Cards";
+import { experience } from "../data";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         <Hero />
         <Explore />
         <Banner />
-        <Cards />
+        <Cards section={experience.live} />
       </main>
     </>
   );
