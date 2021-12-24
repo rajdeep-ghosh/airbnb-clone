@@ -1,15 +1,15 @@
 import Image from "next/image";
 
-function Cards({ section }) {
+function Cards({ section, content }) {
   return (
     <section className="mx-6 sm:mx-14 xl:mx-40 mt-12 !font-Nunito-Sans selection:text-white">
-      <h1 className="text-3xl font-extrabold">{section.heading}</h1>
+      <h1 className="text-3xl font-extrabold">{content.heading}</h1>
       <div className="py-7 flex space-x-4 lg:justify-between overflow-scroll snap-x scrollbar-hide">
-        {section.items.map((item, idx) => (
+        {content.items.map((item, idx) => (
           <div key={idx} className="group snap-center cursor-pointer">
             <div className="relative h-56 lg:h-[17rem] w-56 lg:w-[17rem] drop-shadow-2xl rounded-xl">
               <Image
-                src={item.img}
+                src={`/images/${item.img}`}
                 layout="fill"
                 alt={item.title}
                 objectFit="cover"

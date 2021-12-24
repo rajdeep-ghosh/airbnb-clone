@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
         <Explore />
         <Banner />
-        <Cards section={experience.live} />
+        <Cards section="live" content={experience.live} />
       </main>
     </>
   );

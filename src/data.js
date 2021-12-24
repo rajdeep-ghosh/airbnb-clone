@@ -14,10 +14,10 @@ export const experience = {
   live: {
     heading: "Live anywhere",
     items: [
-      { title: "Outdoor getaways", img: "/images/live/1.jpg" },
-      { title: "Unique stays", img: "/images/live/2.jpg" },
-      { title: "Comfy", img: "/images/live/3.jpg" },
-      { title: "Pets allowed", img: "/images/live/4.jpg" },
+      { title: "Outdoor getaways", img: "live/1.jpg" },
+      { title: "Unique stays", img: "live/2.jpg" },
+      { title: "Comfy", img: "live/3.jpg" },
+      { title: "Pets allowed", img: "live/4.jpg" },
     ],
   },
 };
