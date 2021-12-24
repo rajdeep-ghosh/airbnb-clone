@@ -7,7 +7,3 @@
     @apply inline-flex space-x-2 items-center justify-center py-2 px-[0.875rem] h-12 font-bold rounded-xl hover:ring-2 ring-offset-2 ring-offset-white transition-all duration-200 active:scale-95;
   }
 }
-
-div .hide__XScrollbar::-webkit-scrollbar {
-  display: none;
-}
