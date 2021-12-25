@@ -6,8 +6,11 @@ function Footer() {
       <div className="flex flex-col space-y-3">
         <p className="text-lg font-semibold text-white uppercase">{head}</p>
         <ul>
-          {subHead.map((sub) => (
-            <li className="opacity-90 hover:opacity-100 hover:text-white cursor-pointer hover:underline transition-all duration-200">
+          {subHead.map((sub, index) => (
+            <li 
+              key={index} 
+              className="opacity-90 hover:opacity-100 hover:text-white cursor-pointer hover:underline transition-all duration-200"
+            >
               {sub}
             </li>
           ))}
