@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Explore from "../components/Explore";
 import Banner from "../components/Banner";
 import Cards from "../components/Cards";
+import Footer from "../components/Footer";
 import { experience } from "../data";
 
 export default function Home() {
@@ -18,6 +19,8 @@ export default function Home() {
         <Cards section="discover" content={experience.discover} />
         <Banner title="Try hosting" cta="Learn more" first={false} />
       </main>
+
+      <Footer />
     </>
   );
 }
