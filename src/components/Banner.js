@@ -13,7 +13,7 @@ function Banner({ title, cta, first }) {
         </h1>
         {!first && (
           <p className="text-center xs:text-left font-semibold text-[#fafafc]">
-            Earn extra income and unlock new oppurtunities by sharing your
+            Earn extra income and unlock new opportunities by sharing your
             space.
           </p>
         )}
