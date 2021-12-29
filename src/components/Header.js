@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
 import { SearchIcon, MenuIcon } from "@heroicons/react/outline";
 import { GlobeAltIcon, UserCircleIcon } from "@heroicons/react/solid";
+import DatePicker from "./DatePicker";
 
 function Header() {
   const [showNav, setShowNav] = useState(false);
+  const [inputFocus, setInputFocus] = useState(false);
+  const [checkInDate, setCheckInDate] = useState(new Date);
+  const [checkOutDate, setCheckOutDate] = useState(new Date);
+  const [noOfAdults, setNoOfAdults] = useState(1);
+  const [noOfChildren, setNoOfChildren] = useState(1);
 
   function transitionNav() {
     if (window.scrollY > 100) {
@@ -35,16 +41,28 @@ function Header() {
       </div>
 
       {/* Middle */}
-      <div className="flex justify-between items-center p-2 w-fit md:w-[40vw] max-w-3xl border-2 rounded-full sm:shadow-sm bg-white">
-        <input
-          className="flex-1 px-5 text-lg bg-transparent outline-none"
-          type="text"
-          placeholder="Where are you going?"
-        />
-        <button className="btn rounded-full bg-airbnb_red text-white ring-airbnb_red">
-          <SearchIcon className="h-6 inline" />
-          <span className="hidden md:inline"> Search</span>
-        </button>
+      <div className="relative flex flex-col items-center">
+        <div className="flex justify-between items-center p-2 w-fit md:w-[40vw] max-w-3xl border-2 rounded-full sm:shadow-sm bg-white">
+          <input
+            onFocus={() => setInputFocus(true)}
+            className="flex-1 px-5 text-lg bg-transparent outline-none"
+            type="text"
+            placeholder="Where are you going?"
+            required
+          />
+          <button className="btn rounded-full bg-airbnb_red text-white ring-airbnb_red">
+            <SearchIcon className="h-6 inline" />
+            <span className="hidden md:inline"> Search</span>
+          </button>
+        </div>
+        {inputFocus && (
+          <DatePicker
+            checkInDate={{value: checkInDate, setValue: setCheckInDate}} 
+            checkOutDate={{value: checkOutDate, setValue: setCheckOutDate}}
+            noOfAdults={{value: noOfAdults, setValue: setNoOfAdults}}
+            noOfChildren={{value: noOfChildren, setValue: setNoOfChildren}}
+          />
+        )}
       </div>
 
       {/* Right */}
