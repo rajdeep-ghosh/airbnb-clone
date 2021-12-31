@@ -5,8 +5,8 @@ function NumberInput({ name, value, setValue }) {
       <span className="p-2 rounded-full bg-gray-50">
         <button
           disabled={value <= 0}
-          className="py-2 px-4 bg-[#efeff5] rounded-full hover:outline outline-1 outline-gray-800"
           onClick={() => !(value <= 0) && setValue((val) => val - 1)}
+          className="py-2 px-4 bg-[#efeff5] rounded-full hover:outline outline-1 outline-gray-800 disabled:bg-gray-100 disabled:hover:outline-none"
         >
           -
         </button>
@@ -20,8 +20,8 @@ function NumberInput({ name, value, setValue }) {
         />
         <button
           disabled={value >= 20}
-          className="py-2 px-4 bg-[#efeff5] rounded-full hover:outline outline-1 outline-gray-800"
           onClick={() => !(value >= 20) && setValue((val) => val + 1)}
+          className="py-2 px-4 bg-[#efeff5] rounded-full hover:outline outline-1 outline-gray-800 disabled:bg-gray-100 disabled:hover:outline-none"
         >
           +
         </button>
