@@ -16,6 +16,7 @@ function NumberInput({ name, value, setValue }) {
           min={0}
           max={20}
           value={value}
+          readOnly
         />
         <button
           disabled={value >= 20}
