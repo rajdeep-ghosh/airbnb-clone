@@ -3,14 +3,25 @@ function NumberInput({ name, value, setValue }) {
     <div className="flex justify-between sm:justify-start sm:space-x-6 items-center">
       <label htmlFor={name}>{name}:</label>
       <span className="p-2 rounded-full bg-gray-50">
-        <button className="py-2 px-4 bg-[#efeff5] rounded-full hover:outline outline-1 outline-gray-800">
+        <button
+          disabled={value <= 0}
+          className="py-2 px-4 bg-[#efeff5] rounded-full hover:outline outline-1 outline-gray-800"
+          onClick={() => !(value <= 0) && setValue((val) => val - 1)}
+        >
           -
         </button>
         <input
           className="w-16 p-1 text-center outline-none bg-transparent"
           type="number"
+          min={0}
+          max={20}
+          value={value}
         />
-        <button className="py-2 px-4 bg-[#efeff5] rounded-full hover:outline outline-1 outline-gray-800">
+        <button
+          disabled={value >= 20}
+          className="py-2 px-4 bg-[#efeff5] rounded-full hover:outline outline-1 outline-gray-800"
+          onClick={() => !(value >= 20) && setValue((val) => val + 1)}
+        >
           +
         </button>
       </span>
