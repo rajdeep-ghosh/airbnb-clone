@@ -5,7 +5,9 @@ import DatePicker from "./DatePicker";
 
 function Header() {
   const [showNav, setShowNav] = useState(false);
+  
   const [inputFocus, setInputFocus] = useState(false);
+  const [location, setLocation] = useState("");
   const [checkInDate, setCheckInDate] = useState(new Date);
   const [checkOutDate, setCheckOutDate] = useState(new Date);
   const [noOfAdults, setNoOfAdults] = useState(0);
@@ -45,9 +47,11 @@ function Header() {
         <div className="flex justify-between items-center p-2 w-fit md:w-[40vw] max-w-3xl border-2 rounded-full sm:shadow-sm bg-white">
           <input
             onFocus={() => setInputFocus(true)}
+            onChange={(e) => setLocation(e.target.value)}
             className="flex-1 px-5 text-lg bg-transparent outline-none"
             type="text"
             placeholder="Where are you going?"
+            value={location}
             required
           />
           <button className="btn rounded-full bg-airbnb_red text-white ring-airbnb_red">
