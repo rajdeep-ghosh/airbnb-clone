@@ -32,7 +32,7 @@ function DatePicker({
   };
 
   return (
-    <div className="absolute top-20 p-2 bg-white text-gray-700 rounded-xl drop-shadow-2xl selection:bg-airbnb_red selection:text-gray-100">
+    <div className={`absolute top-20 p-2 bg-white text-gray-700 rounded-xl drop-shadow-2xl selection:bg-airbnb_red selection:text-gray-100 overflow-y-auto ${isSmallScreen && `h-[480px]`}`}>
       <h4 className="p-4 text-lg font-bold">Pick Check-in & Check-out dates</h4>
       {isSmallScreen ? (
         <DateRange {...options} />
