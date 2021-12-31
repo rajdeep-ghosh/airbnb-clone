@@ -8,8 +8,8 @@ function Header() {
   const [inputFocus, setInputFocus] = useState(false);
   const [checkInDate, setCheckInDate] = useState(new Date);
   const [checkOutDate, setCheckOutDate] = useState(new Date);
-  const [noOfAdults, setNoOfAdults] = useState(1);
-  const [noOfChildren, setNoOfChildren] = useState(1);
+  const [noOfAdults, setNoOfAdults] = useState(0);
+  const [noOfChildren, setNoOfChildren] = useState(0);
 
   function transitionNav() {
     if (window.scrollY > 100) {
@@ -61,6 +61,7 @@ function Header() {
             checkOutDate={{value: checkOutDate, setValue: setCheckOutDate}}
             noOfAdults={{value: noOfAdults, setValue: setNoOfAdults}}
             noOfChildren={{value: noOfChildren, setValue: setNoOfChildren}}
+            close={setInputFocus}
           />
         )}
       </div>
