@@ -3,7 +3,7 @@ import Header from "../components/Header";
 function Search() {
   return (
     <>
-      <Header />
+      <Header page="search" />
     </>
   );
 }
