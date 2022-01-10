@@ -6,7 +6,7 @@ function Search() {
     <>
       <Header page="search" />
 
-      <main className="mt-24">
+      <main className="mt-24 flex">
         <SearchResults />
       </main>
     </>
