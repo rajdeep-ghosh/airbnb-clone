@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Cards({ section, content }) {
   return (
-    <section className="mx-6 sm:mx-14 xl:mx-40 mt-12 !font-Nunito-Sans selection:text-white">
+    <section className="mt-12 !font-Nunito-Sans selection:text-white">
       <h1 className="text-3xl font-extrabold">{content.heading}</h1>
       <div className="py-7 flex space-x-4 lg:justify-between overflow-scroll snap-x scrollbar-hide -mb-6">
         {content.items.map((item, idx) => (

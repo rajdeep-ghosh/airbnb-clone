@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <>
       <Header />
+      <Hero />
 
-      <main className="bg-gray-50 selection:bg-airbnb_red antialiased">
-        <Hero />
+      <main className="mx-6 sm:mx-14 xl:mx-40 selection:bg-airbnb_red antialiased">
         <Explore />
         <Banner title="Not sure where to go? Perfect." cta="I'm flexible" first={true} />
         <Cards section="live" content={experience.live} />
