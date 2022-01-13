@@ -41,6 +41,7 @@ function Header({ page }) {
         noOfGuests: (noOfAdults+noOfChildren),
       }
     });
+    setInputFocus(false);
   }
 
   return (
