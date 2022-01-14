@@ -4,7 +4,7 @@ import { GlobeAltIcon, UserCircleIcon } from "@heroicons/react/solid";
 import DatePicker from "./DatePicker";
 import { useRouter } from "next/router";
 
-function Header({ page }) {
+function Header({ page, placeholder }) {
   const router = useRouter();
 
   const [showNav, setShowNav] = useState(false);
@@ -64,9 +64,9 @@ function Header({ page }) {
           <input
             onFocus={() => setInputFocus(true)}
             onChange={(e) => setLocation(e.target.value)}
-            className="flex-1 px-5 text-lg bg-transparent outline-none"
+            className={`flex-1 px-5 text-lg bg-transparent outline-none ${page && `placeholder:text-sm`}`}
             type="text"
-            placeholder="Where are you going?"
+            placeholder={placeholder || "Where are you going?"}
             value={location}
             required
           />
