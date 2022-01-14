@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { format, parseISO } from "date-fns";
 import Header from "../components/Header";
 import SearchResults from "../components/SearchResults";
+import Footer from "../components/Footer";
 
 function Search() {
   const router = useRouter();
@@ -25,6 +26,8 @@ function Search() {
           checkOutDate={formattedCheckoutDate}
         />
       </main>
+
+      <Footer />
     </>
   );
 }
