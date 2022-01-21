@@ -1,4 +1,10 @@
-function SearchResults({ location, checkInDate, checkOutDate, noOfGuests }) {
+function SearchResults({
+  location,
+  checkInDate,
+  checkOutDate,
+  noOfGuests,
+  searchData,
+}) {
   const floatingButton = (text) => (
     <p className="px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-90 active:bg-gray-50 transition-transform duration-200 select-none">
       {text}

@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import SearchResults from "../components/SearchResults";
 import Footer from "../components/Footer";
 
-function Search() {
+function Search({ searchData }) {
   const router = useRouter();
 
   const { location, checkInDate, checkOutDate, noOfGuests } = router.query;
@@ -24,6 +24,7 @@ function Search() {
           noOfGuests={noOfGuests}
           checkInDate={formattedCheckInDate}
           checkOutDate={formattedCheckoutDate}
+          searchData={searchData}
         />
       </main>
 
@@ -33,3 +34,15 @@ function Search() {
 }
 
 export default Search;
+
+export async function getServerSideProps() {
+  const searchData = await fetch("https://jsonkeeper.com/b/5NPS").then(
+    (res) => res.json()
+  );
+
+  return {
+    props: {
+      searchData: searchData,
+    },
+  };
+}
