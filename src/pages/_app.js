@@ -1,5 +1,13 @@
 import "../styles/globals.css";
+import "../styles/nprogress.css";
 import Head from "next/head";
+import Router from "next/router";
+import NProgress from "nprogress";
+
+NProgress.configure({ showSpinner: false, easing: 'ease', speed: 500 });
+Router.events.on("routeChangeStart", NProgress.start);
+Router.events.on("routeChangeComplete", NProgress.done);
+Router.events.on("routeChangeError", NProgress.done);
 
 function MyApp({ Component, pageProps }) {
   return (
