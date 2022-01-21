@@ -1,3 +1,5 @@
+import InfoCard from "./InfoCard";
+
 function SearchResults({
   location,
   checkInDate,
@@ -25,6 +27,12 @@ function SearchResults({
         {floatingButton("Price")}
         {floatingButton("Rooms & Beds")}
         {floatingButton("More Filters")}
+      </div>
+
+      <div className="mt-8 flex flex-col">
+        {searchData.map((info, index) => (
+          <InfoCard key={index} info={info} />
+        ))}
       </div>
     </section>
   );
