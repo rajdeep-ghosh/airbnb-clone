@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getCenter } from "geolib";
-import ReactMapGL, { Marker } from "react-map-gl";
+import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import { LocationMarkerIcon } from "@heroicons/react/solid";
 
 function Map({ searchData }) {
@@ -21,6 +21,8 @@ function Map({ searchData }) {
     zoom: 11,
   });
 
+  const [selectedLocation, setSelectedLocation] = useState({});
+
   return (
     <section className="hidden lg:block flex-1 max-w-[600px]">
       <ReactMapGL
@@ -32,8 +34,29 @@ function Map({ searchData }) {
         {searchData.map((data) => (
           <div key={data.long}>
             <Marker longitude={data.long} latitude={data.lat}>
-              <LocationMarkerIcon className="h-7 animate-bounce text-airbnb_red" />
+              <LocationMarkerIcon
+                onClick={() =>
+                  setSelectedLocation({
+                    lat: data.lat,
+                    long: data.long,
+                    title: data.title,
+                  })
+                }
+                className="h-7 animate-bounce cursor-pointer text-airbnb_red"
+                aria-label="click-pin"
+              />
             </Marker>
+            
+            {selectedLocation.lat === data.lat && (
+              <Popup
+                closeOnClick={true}
+                onClose={() => setSelectedLocation({})}
+                latitude={selectedLocation.lat}
+                longitude={selectedLocation.long}
+              >
+                {selectedLocation.title}
+              </Popup>
+            )}
           </div>
         ))}
       </ReactMapGL>
