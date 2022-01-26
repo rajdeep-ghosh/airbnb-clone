@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getCenter } from "geolib";
-import ReactMapGL from "react-map-gl";
+import ReactMapGL, { Marker } from "react-map-gl";
+import { LocationMarkerIcon } from "@heroicons/react/solid";
 
 function Map({ searchData }) {
   // Transform searchData into desired format
@@ -17,7 +18,7 @@ function Map({ searchData }) {
     height: "100%",
     latitude: center.latitude,
     longitude: center.longitude,
-    zoom: 12,
+    zoom: 11,
   });
 
   return (
@@ -27,7 +28,15 @@ function Map({ searchData }) {
         mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
         {...viewport}
         onViewportChange={(nextViewport) => setViewport(nextViewport)}
-      ></ReactMapGL>
+      >
+        {searchData.map((data) => (
+          <div key={data.long}>
+            <Marker longitude={data.long} latitude={data.lat}>
+              <LocationMarkerIcon className="h-7 animate-bounce text-airbnb_red" />
+            </Marker>
+          </div>
+        ))}
+      </ReactMapGL>
     </section>
   );
 }
