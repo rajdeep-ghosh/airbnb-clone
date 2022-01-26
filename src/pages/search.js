@@ -19,7 +19,7 @@ function Search({ searchData }) {
         placeholder={`${location} | ${formattedCheckInDate} ‒ ${formattedCheckoutDate} | ${noOfGuests} guest`}
       />
 
-      <main className="mt-32 mx-5 sm:mx-8 lg:ml-8 lg:mr-0 flex space-x-4">
+      <main className="mt-32 mx-5 sm:mx-8 lg:ml-8 lg:mr-0 flex space-x-4 font-Nunito-Sans antialiased selection:bg-airbnb_red selection:text-white">
         <SearchResults
           location={location}
           noOfGuests={noOfGuests}
