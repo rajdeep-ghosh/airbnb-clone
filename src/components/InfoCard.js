@@ -4,7 +4,7 @@ import { StarIcon } from "@heroicons/react/solid";
 
 function InfoCard({ info }) {
   return (
-    <div className="py-7 sm:px-2 flex flex-col space-y-4 sm:flex-row sm:space-x-5 border-b first:border-t last:border-b-0 sm:infocard__hover">
+    <div className="py-7 sm:px-2 flex flex-col space-y-4 sm:flex-row sm:space-x-5 sm:space-y-0 border-b first:border-t last:border-b-0 sm:infocard__hover">
       <div className="relative h-56 w-full sm:h-24 sm:w-40 md:h-52 md:w-80 flex-shrink-0">
         <Image
           src={info.img}

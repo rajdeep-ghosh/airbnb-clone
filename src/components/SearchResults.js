@@ -14,7 +14,7 @@ function SearchResults({
   );
 
   return (
-    <section className="flex-grow">
+    <section className="flex-1 lg:min-w-[850px]">
       <p className="text-sm text-gray-500/80">
         300+ stays ‒ {checkInDate} to {checkOutDate} ‒ {noOfGuests} guest
       </p>

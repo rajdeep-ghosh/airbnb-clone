@@ -19,7 +19,7 @@ function Search({ searchData }) {
         placeholder={`${location} | ${formattedCheckInDate} ‒ ${formattedCheckoutDate} | ${noOfGuests} guest`}
       />
 
-      <main className="mt-32 mx-6 sm:mx-14 xl:mx-40 flex">
+      <main className="mt-32 mx-5 sm:mx-8 lg:ml-8 lg:mr-0 flex space-x-4">
         <SearchResults
           location={location}
           noOfGuests={noOfGuests}
@@ -27,9 +27,7 @@ function Search({ searchData }) {
           checkOutDate={formattedCheckoutDate}
           searchData={searchData}
         />
-        <section className="hidden md:block">
-          <Map />
-        </section>
+        <Map searchData={searchData} />
       </main>
 
       <Footer />
@@ -40,8 +38,8 @@ function Search({ searchData }) {
 export default Search;
 
 export async function getServerSideProps() {
-  const searchData = await fetch("https://jsonkeeper.com/b/5NPS").then(
-    (res) => res.json()
+  const searchData = await fetch("https://jsonkeeper.com/b/5NPS").then((res) =>
+    res.json()
   );
 
   return {
