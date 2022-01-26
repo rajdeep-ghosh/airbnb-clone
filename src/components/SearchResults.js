@@ -21,7 +21,7 @@ function SearchResults({
       <h1 className="mt-3 mb-6 text-3xl font-semibold">
         Stays in <span className="capitalize">{location}</span>
       </h1>
-      <div className="hidden md:inline-flex space-x-3 text-gray-600 whitespace-nowrap">
+      <div className="hidden md:flex space-x-3 text-gray-600 whitespace-nowrap">
         {floatingButton("Cancellation Flexibility")}
         {floatingButton("Type of Place")}
         {floatingButton("Price")}
@@ -29,7 +29,7 @@ function SearchResults({
         {floatingButton("More Filters")}
       </div>
 
-      <div className="mt-8 flex flex-col">
+      <div className="mt-4 sm:mt-8 flex flex-col">
         {searchData.map((info, index) => (
           <InfoCard key={index} info={info} />
         ))}

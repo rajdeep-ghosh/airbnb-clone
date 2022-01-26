@@ -4,8 +4,8 @@ import { StarIcon } from "@heroicons/react/solid";
 
 function InfoCard({ info }) {
   return (
-    <div className="py-7 px-2 flex space-x-5 border-b first:border-t cursor-pointer hover:opacity-80 hover:shadow-lg transition-all duration-200 ease-out">
-      <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0">
+    <div className="py-7 sm:px-2 flex flex-col space-y-4 sm:flex-row sm:space-x-5 border-b first:border-t last:border-b-0 sm:infocard__hover">
+      <div className="relative h-56 w-full sm:h-24 sm:w-40 md:h-52 md:w-80 flex-shrink-0">
         <Image
           src={info.img}
           layout="fill"
@@ -14,7 +14,7 @@ function InfoCard({ info }) {
         />
       </div>
 
-      <div className="flex-grow flex flex-col justify-between">
+      <div className="space-y-4 sm:space-y-0 flex-grow flex flex-col justify-between">
         <div>
           <div className="flex justify-between">
             <p className="text-sm text-gray-500">{info.location}</p>
@@ -33,8 +33,8 @@ function InfoCard({ info }) {
             {info.star}
           </p>
           <div>
-            <p className="text-lg lg:text-2xl font-semibold pb-1">{info.price}</p>
-            <p className="text-right font-extralight">{info.total}</p>
+            <p className="text-lg lg:text-2xl font-semibold sm:pb-1">{info.price}</p>
+            <p className="hidden sm:block text-right font-extralight">{info.total}</p>
           </div>
         </div>
       </div>
