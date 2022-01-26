@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { format, parseISO } from "date-fns";
 import Header from "../components/Header";
 import SearchResults from "../components/SearchResults";
+import Map from "../components/Map";
 import Footer from "../components/Footer";
 
 function Search({ searchData }) {
@@ -26,6 +27,9 @@ function Search({ searchData }) {
           checkOutDate={formattedCheckoutDate}
           searchData={searchData}
         />
+        <section className="hidden md:block">
+          <Map />
+        </section>
       </main>
 
       <Footer />
