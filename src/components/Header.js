@@ -46,7 +46,7 @@ function Header({ page, placeholder }) {
 
   return (
     <header
-      className={`fixed top-0 flex justify-center sm:justify-between items-center py-4 px-6 sm:px-14 xl:px-40 w-full z-50 !font-Nunito-Sans transition-all duration-200 ${page ? `bg-white shadow-md` : (showNav && `bg-white shadow-md`)}`}
+      className={`fixed top-0 flex justify-center sm:justify-between items-center py-4 ${page ? `px-5 sm:px-8` : `px-6 sm:px-14 xl:px-40`} w-full z-50 !font-Nunito-Sans transition-all duration-200 ${page ? `bg-white shadow-md` : (showNav && `bg-white shadow-md`)}`}
     >
       {/* Left */}
       <div onClick={() => router.push("/")} className="!hidden md:!block">
