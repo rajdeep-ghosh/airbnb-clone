@@ -28,7 +28,7 @@ export default function Search({ searchData }) {
           checkOutDate={formattedCheckoutDate}
           searchData={searchData}
         />
-        {/* <Map searchData={searchData} /> */}
+        <Map searchData={searchData.results} />
       </main>
 
       <Footer />

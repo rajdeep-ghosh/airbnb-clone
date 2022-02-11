@@ -6,8 +6,8 @@ import { LocationMarkerIcon } from "@heroicons/react/solid";
 function Map({ searchData }) {
   // Transform searchData into desired format
   const coords = searchData.map((data) => ({
-    latitude: data.lat,
-    longitude: data.long,
+    latitude: data.coordinate.lat,
+    longitude: data.coordinate.lon,
   }));
 
   // Get center coordinate
@@ -32,14 +32,14 @@ function Map({ searchData }) {
         onViewportChange={(nextViewport) => setViewport(nextViewport)}
       >
         {searchData.map((data) => (
-          <div key={data.long}>
-            <Marker longitude={data.long} latitude={data.lat}>
+          <div key={data.id}>
+            <Marker longitude={data.coordinate.lon} latitude={data.coordinate.lat}>
               <LocationMarkerIcon
                 onClick={() =>
                   setSelectedLocation({
-                    lat: data.lat,
-                    long: data.long,
-                    title: data.title,
+                    lat: data.coordinate.lat,
+                    long: data.coordinate.lon,
+                    title: data.name,
                   })
                 }
                 className="h-7 animate-bounce cursor-pointer text-airbnb_red"
@@ -47,7 +47,7 @@ function Map({ searchData }) {
               />
             </Marker>
             
-            {selectedLocation.lat === data.lat && (
+            {selectedLocation.lat === data.coordinate.lat && (
               <Popup
                 closeOnClick={true}
                 onClose={() => setSelectedLocation({})}
