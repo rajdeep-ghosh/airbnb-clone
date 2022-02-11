@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import axios from "axios";
+import axios from "../api/axios";
 import { format, formatISO, parseISO } from "date-fns";
 import Header from "../components/Header";
 import SearchResults from "../components/SearchResults";
@@ -42,49 +42,33 @@ export async function getServerSideProps(context) {
   const checkout = formatISO(new Date(checkOutDate), {representation: "date",});
 
   // Get Destination ID of location
-  const destinationIdOptions = {
-    method: "GET",
-    url: "https://hotels-com-provider.p.rapidapi.com/v1/destinations/search",
-    params: {
-      query: location,
-      currency: "INR",
-      locale: "en_IN",
-    },
-    headers: {
-      "x-rapidapi-host": "hotels-com-provider.p.rapidapi.com",
-      "x-rapidapi-key": process.env.RAPIDAPI_KEY,
-    },
-  };
-
   const destinationId = await axios
-    .request(destinationIdOptions)
-    .then((response) => response.data.suggestions[0].entities[0].destinationId)
-    .catch((error) => console.error(error));
+    .get("/destinations/search", {
+      params: {
+        query: location,
+        currency: "INR",
+        locale: "en_IN",
+      },
+    })
+    .then((res) => res.data.suggestions[0].entities[0].destinationId)
+    .catch((err) => console.error(err));
 
   // Get Hotels from Destination ID
-  const hotelOptions = {
-    method: "GET",
-    url: "https://hotels-com-provider.p.rapidapi.com/v1/hotels/search",
-    params: {
-      checkin_date: checkin,
-      checkout_date: checkout,
-      sort_order: "BEST_SELLER",
-      destination_id: destinationId,
-      adults_number: noOfGuests,
-      locale: "en_IN",
-      currency: "INR",
-      page_number: "1",
-    },
-    headers: {
-      "x-rapidapi-host": "hotels-com-provider.p.rapidapi.com",
-      "x-rapidapi-key": process.env.RAPIDAPI_KEY,
-    },
-  };
-
   const hotels = await axios
-    .request(hotelOptions)
-    .then((response) => JSON.parse(JSON.stringify(response.data.searchResults)))
-    .catch((error) => console.error(error));
+    .get("/hotels/search", {
+      params: {
+        checkin_date: checkin,
+        checkout_date: checkout,
+        sort_order: "BEST_SELLER",
+        destination_id: destinationId,
+        adults_number: noOfGuests,
+        locale: "en_IN",
+        currency: "INR",
+        page_number: "1",
+      },
+    })
+    .then((res) => JSON.parse(JSON.stringify(res.data.searchResults)))
+    .catch((err) => console.error(err));
 
   return {
     props: {
