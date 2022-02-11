@@ -30,8 +30,8 @@ function SearchResults({
       </div>
 
       <div className="mt-4 sm:mt-8 flex flex-col">
-        {searchData.map((info, index) => (
-          <InfoCard key={index} info={info} />
+        {searchData?.results.map((info) => (
+          <InfoCard key={info.id} info={info} />
         ))}
       </div>
     </section>

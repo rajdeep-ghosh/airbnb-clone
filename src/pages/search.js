@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import axios from "axios";
-import { format, parseISO } from "date-fns";
+import { format, formatISO, parseISO } from "date-fns";
 import Header from "../components/Header";
 import SearchResults from "../components/SearchResults";
 import Map from "../components/Map";
@@ -28,7 +28,7 @@ export default function Search({ searchData }) {
           checkOutDate={formattedCheckoutDate}
           searchData={searchData}
         />
-        <Map searchData={searchData} />
+        {/* <Map searchData={searchData} /> */}
       </main>
 
       <Footer />
@@ -37,7 +37,9 @@ export default function Search({ searchData }) {
 }
 
 export async function getServerSideProps(context) {
-  const { location } = context.query;
+  const { location, checkInDate, checkOutDate, noOfGuests } = context.query;
+  const checkin = formatISO(new Date(checkInDate), { representation: "date" });
+  const checkout = formatISO(new Date(checkOutDate), {representation: "date",});
 
   // Get Destination ID of location
   const destinationIdOptions = {
@@ -59,13 +61,34 @@ export async function getServerSideProps(context) {
     .then((response) => response.data.suggestions[0].entities[0].destinationId)
     .catch((error) => console.error(error));
 
-  const searchData = await fetch("https://jsonkeeper.com/b/5NPS").then((res) =>
-    res.json()
-  );
+  // Get Hotels from Destination ID
+  const hotelOptions = {
+    method: "GET",
+    url: "https://hotels-com-provider.p.rapidapi.com/v1/hotels/search",
+    params: {
+      checkin_date: checkin,
+      checkout_date: checkout,
+      sort_order: "BEST_SELLER",
+      destination_id: destinationId,
+      adults_number: noOfGuests,
+      locale: "en_IN",
+      currency: "INR",
+      page_number: "1",
+    },
+    headers: {
+      "x-rapidapi-host": "hotels-com-provider.p.rapidapi.com",
+      "x-rapidapi-key": process.env.RAPIDAPI_KEY,
+    },
+  };
+
+  const hotels = await axios
+    .request(hotelOptions)
+    .then((response) => JSON.parse(JSON.stringify(response.data.searchResults)))
+    .catch((error) => console.error(error));
 
   return {
     props: {
-      searchData: searchData,
+      searchData: hotels,
     },
   };
 }
