@@ -27,6 +27,7 @@
   "dependencies": {
     "@heroicons/react": "^1.0.5",
     "@react-hook/media-query": "^1.1.1",
+    "axios": "^0.25.0",
     "date-fns": "^2.27.0",
     "geolib": "^3.3.3",
     "next": "latest",

@@ -16,7 +16,7 @@ function SearchResults({
   return (
     <section className="flex-1 lg:min-w-[850px]">
       <p className="text-sm text-gray-500/80">
-        300+ stays ‒ {checkInDate} to {checkOutDate} ‒ {noOfGuests} guest
+        {searchData.totalCount}+ stays ‒ {checkInDate} to {checkOutDate} ‒ {noOfGuests} guest
       </p>
       <h1 className="mt-3 mb-6 text-3xl font-semibold">
         Stays in <span className="capitalize">{location}</span>
@@ -30,8 +30,8 @@ function SearchResults({
       </div>
 
       <div className="mt-4 sm:mt-8 flex flex-col">
-        {searchData.map((info, index) => (
-          <InfoCard key={index} info={info} />
+        {searchData?.results.map((info) => (
+          <InfoCard key={info.id} info={info} />
         ))}
       </div>
     </section>
