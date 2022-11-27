@@ -1,7 +1,10 @@
+import { useRouter } from "next/router";
 import Image from "next/image";
 import { explore } from "../data";
 
 function Explore() {
+  const router = useRouter();
+
   return (
     <section className="mt-12 !font-Nunito-Sans selection:text-white">
       <h1 className="text-3xl font-extrabold">Explore nearby</h1>
@@ -10,6 +13,7 @@ function Explore() {
           <div
             key={idx}
             className="group flex items-center space-x-6 hover:bg-white rounded-xl hover:drop-shadow-lg transition-all duration-200 cursor-pointer"
+            onClick={() => router.push(`/search?location=${item.name}&checkInDate=${new Date().toISOString()}&checkOutDate=${new Date().toISOString()}&noOfGuests=1`)}
           >
             <div className="relative h-[85px] w-[85px] rounded-xl drop-shadow-2xl">
               <Image
